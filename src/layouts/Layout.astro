@@ -2,6 +2,8 @@
 import '@fontsource-variable/rubik';
 import '@fontsource-variable/nunito';
 
+import Navbar from '@/components/Navbar.astro';
+
 interface Props {
 	title: string;
 	description: string;
@@ -20,28 +22,18 @@ const { title, description } = Astro.props;
 		<meta name='generator' content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="page">
+	<body>
+	  <Navbar />
 		<slot />
 	</body>
 </html>
 
 <style is:global>
-  h1 {
+  h1, h2 {
     @apply font-bold font-headings;
   }
 
-  p {
+  p, a {
     @apply font-base;
-  }
-
-  @media only screen and (min-width: 1024px) {
-    .page {
-      box-shadow: 0 0 30px rgba(0, 0, 0, .2);
-      max-width: calc(1280px - 32px);
-    }
-  }
-  .page {
-    margin-left: auto;
-    margin-right: auto;
   }
 </style>

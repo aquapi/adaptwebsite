@@ -1,13 +1,15 @@
-<main class='min-w-screen min-h-screen'>
-  <div class='z-1 bg-[url(/bg/hero.webp)] bg-cover bg-center'></div>
-  <div class='z-2 bg-black bg-opacity-60'></div>
-  <div class='z-3 flex flex-col justify-center items-center gap-6'>
-    <slot />
+<div class='hero'>
+  <div class='z-1 bg-[url(/bg/hero.webp)] bg-cover bg-center bg-fixed absolute'></div>
+  <div class='z-2 bg-black bg-opacity-60 absolute'></div>
+  <div class='hero-content text-center'>
+    <main>
+      <slot />
+    </main>
   </div>
-</main>
+</div>
 
 <style>
   div {
-    @apply absolute w-screen min-h-[75vh]
+    @apply w-screen min-h-[88vh]
   }
 </style>
