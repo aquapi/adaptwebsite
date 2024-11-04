@@ -1,0 +1,40 @@
+---
+import MenuIcon from '@/components/MenuIcon.astro';
+import NavItems from '@/components/NavItems.astro';
+---
+
+{/** Everything goes on the left on small screens */}
+<nav class='lg:justify-center navbar bg-[#303030] py-5 text-zinc-50'>
+  {/** Center the nav on large screens */}
+  <div class='max-w-7xl w-screen justify-between'>
+    <div class="flex-1 xl:mr-48 pl-5">
+  		<a href='/'>
+        {/** Make the text smaller on small screens */}
+        <h2 class='sm:text-3xl text-xl'>ADaPT</h2>
+        {/** Hide this text on really small screens */}
+        <p class='sm:block hidden'>Assemble Drive and Perform Technology</p>
+      </a>
+    </div>
+
+    {/** Small screen icon */}
+    <div class='lg:hidden dropdown dropdown-end'>
+      <div tabindex='0' role='button' class='btn btn-ghost'>
+        <MenuIcon />
+      </div>
+
+      <ul
+        tabindex='0'
+        class="menu menu-sm dropdown-content bg-[#303030] rounded-box z-[1] w-32 p-2 shadow"
+      >
+        <NavItems />
+      </ul>
+    </div>
+
+    {/** Large screen links */}
+    <div class="lg:flex hidden flex-none">
+      <ul class="menu menu-horizontal">
+        <NavItems />
+      </ul>
+    </div>
+  </div>
+</nav>

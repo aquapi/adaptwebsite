@@ -2,6 +2,8 @@
 import '@fontsource-variable/rubik';
 import '@fontsource-variable/nunito';
 
+import Navbar from '@/components/Navbar.astro';
+
 interface Props {
 	title: string;
 	description: string;
@@ -21,16 +23,17 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+	  <Navbar />
 		<slot />
 	</body>
 </html>
 
 <style is:global>
-  h1 {
+  h1, h2 {
     @apply font-bold font-headings;
   }
 
-  p {
+  p, a {
     @apply font-base;
   }
 </style>
