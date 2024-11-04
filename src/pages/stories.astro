@@ -7,19 +7,15 @@ import Layout from '@/layouts/Layout.astro';
   description='GEN 1, 2 Nhận thấy tầm quan trọng của việc xây dựng niềm đam mê và yêu thích công nghệ trong các bạn trẻ, ADaPT ra đời với sứ mệnh đem đến một cái nhìn khác đối với một lĩnh vực được coi là vô cùng khô khan và khó tiếp cận. Được bảo trợ…'
 >
   <h1 class="pt-16 pb-16 text-4xl text-center">Stories</h1>
-  <div class="flex gap-1">
-    <img src="logo_truong.webp" alt="" class="img-row" style="flex-grow: calc(557/506);">
-    <img src="banner_adapt.webp" alt="" class="img-row" style="flex-grow: calc(668/247);">
-    <img src="logo_adapt.webp" alt="" class="img-row" style="flex-grow: calc(506/506);">
+  <div class="flex gap-1 max-w-[1663px] ml-auto mr-auto items-center flex-col md:flex-row">
+    <img src="logo_truong.webp" alt="" class="img-row grow-[calc(557/506)]">
+    <img src="banner_adapt.webp" alt="" class="img-row grow-[calc(668/247)]">
+    <img src="logo_adapt.webp" alt="" class="img-row grow-[calc(506/506)]">
   </div>
 </Layout>
 
 <style>
   .img-row {
-    display:block;
-    flex-basis: 0;
-    width: 0;
-    height: auto;
-    max-height: 506px;
+    @apply block basis-0 h-auto max-h-[506px] w-auto md:w-0;
   }
 </style>
