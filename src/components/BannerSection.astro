@@ -1,0 +1,8 @@
+---
+import {banners} from "stories.json"
+---
+<div>
+    {banners.map((url) => (
+      <img src={url} alt={url} class="w-full max-w-[1663px] ml-auto mr-auto pt-8">
+    ))}
+</div>
