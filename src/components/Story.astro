@@ -1,0 +1,19 @@
+---
+interface Props {
+  imageUrl: string,
+  header: string,
+  content: string,
+  reversed: boolean
+}
+
+const {imageUrl, header, content, reversed} = Astro.props;
+---
+<div class:list={["pt-16 flex mr-auto ml-auto w-full max-w-[1663px] flex-col md:flex-row", { "md:flex-row-reverse": reversed }]}>
+  <div class="md:w-1/2">
+    <img src={imageUrl} alt={header} class="w-full h-auto">
+  </div>
+  <div class="text-center mt-auto mb-auto md:w-1/2">
+    <h1 class="text-red-700 text-[40px] font-normal pt-8">{header}</h1>
+    <p class="text-white pt-8 pl-4 pr-4 text-[20px]">{content}</p>
+  </div>
+</div>

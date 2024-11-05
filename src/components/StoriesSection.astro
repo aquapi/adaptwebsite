@@ -1,0 +1,12 @@
+---
+import Story from "@/components/Story.astro";
+import {stories} from "stories.json";
+---
+
+{stories.map((story, id) => (
+  <Story
+    imageUrl={story.image_url}
+    header={story.header}
+    content={story.content}
+    reversed={id % 2 == 1}></Story>
+))}
