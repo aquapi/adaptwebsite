@@ -8,7 +8,7 @@ interface Props {
 
 const {imageUrl, header, content, reversed} = Astro.props;
 ---
-<div class:list={["pt-16 flex mr-auto ml-auto w-full max-w-[1663px] flex-col md:flex-row", { "md:flex-row-reverse": reversed }]}>
+<div class=`pt-16 flex mr-auto ml-auto w-full max-w-[1663px] flex-col md:flex-row ${reversed ? "md:flex-row-reverse" : ""}`>
   <div class="md:w-1/2">
     <img src={imageUrl} alt={header} class="w-full h-auto">
   </div>
