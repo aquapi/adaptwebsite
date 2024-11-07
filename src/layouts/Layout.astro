@@ -1,8 +1,8 @@
 ---
-import '@fontsource-variable/rubik';
-import '@fontsource-variable/nunito';
+import "@fontsource-variable/rubik";
+import "@fontsource-variable/nunito";
 
-import Navbar from '@/components/Navbar.astro';
+import Navbar from "@/components/Navbar.astro";
 
 interface Props {
 	title: string;
@@ -13,27 +13,32 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang="en">
 	<head>
-		<meta charset='UTF-8' />
-		<meta name='description' content={description} />
-		<meta name='viewport' content='width=device-width' />
-		<link rel='icon' type='image/webp' href='/favicon.webp' />
-		<meta name='generator' content={Astro.generator} />
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/webp" href="/favicon.webp" />
+		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<script
+			src="https://kit.fontawesome.com/yourcode.js"
+			crossorigin="anonymous"></script>
 	</head>
 	<body>
-	  <Navbar />
+		<Navbar />
 		<slot />
 	</body>
 </html>
 
 <style is:global>
-  h1, h2 {
-    @apply font-bold font-headings;
-  }
+	h1,
+	h2 {
+		@apply font-bold font-headings;
+	}
 
-  p, a {
-    @apply font-base;
-  }
+	p,
+	a {
+		@apply font-base;
+	}
 </style>
