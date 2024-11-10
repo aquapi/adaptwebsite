@@ -1,5 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import Itemcard from "@/components/Itemcard.astro";
+import Slider from "@/components/Slider.astro";
 ---
 
 <Layout
@@ -8,388 +10,48 @@ import Layout from "@/layouts/Layout.astro";
 >
   <div class="prod-cont">
     <!-- Top Div with Sliding Image -->
-    <div class="firstSec">
-      <h1>PRODUCTS</h1>
-      <div class="slide">
-        <button class="butleft"><i class="fa-solid fa-arrow-left"></i></button>
-        <img class="slide-image" src="" id="imgpre" />
-        <button class="butright"><i class="fa-solid fa-arrow-right"></i></button
-        >
-      </div>
-      <div class="poscont"></div>
-    </div>
+    <Slider />
 
     <!-- Item cards -->
-    <div class="content">
-      <h2>Một số sản phẩm công nghệ của ADaPT</h2>
-      <div class="items">
-        <div class="itemrow">
-          <div class="itemcol">
-            <img class="thumb" src="/productImage/classifyBin.png" alt="" />
-            <h3 class="title">THÙNG RÁC TỰ PHÂN LOẠI RÁC</h3>
-            <p class="des">
-              Chiếc thùng rác tự phân loại rác thải được tích hợp công nghệ AI
-              đã giúp ích rất nhiều cho môi trường. Đây là sản phẩm đã đem về
-              giải ba Think Eco ngày hội STEME 2019.
-            </p>
-          </div>
-          <div class="itemcol">
-            <img class="thumb" src="/productImage/remotecar.png" alt="" />
-            <h3 class="title">XE ĐIỀU KHIỂN TỪ XA</h3>
-            <p class="des">
-              Đây là chiếc xe được điều khiển bằng giọng nói. Hằng năm, các thế
-              hệ ADaPTer đều sẽ cho ra mắt một chiếc xe điều khiển từ xa mới
-              được phát triển giựa trên các xe điều khiển trước đó.
-            </p>
-          </div>
-          <div class="itemcol">
-            <img class="thumb" src="/productImage/rt.png" alt="" />
-            <h3 class="title">RT</h3>
-            <p class="des">
-              Máy vớt rác trên sông RT là sản phẩm đạt giải nhất trong Talkshow
-              aSpeak 2019. Chiếc máy được làm từ các chai nhựa có hại cho môi
-              trường sau đó được tái chế và trở thành một sản phẩm có ích cho
-              con người.
-            </p>
-          </div>
-        </div>
-        <div class="itemrow">
-          <div class="itemcol">
-            <img class="thumb" src="/productImage/fog.png" alt="" />
-            <h3 class="title">MÁY PHUN SƯƠNG KHỬ KHUẨN TỰ ĐỘNG</h3>
-            <p class="des">
-              Sản phẩm “Máy phun sương khử khuẩn tự động” đã góp một phần không
-              nhỏ vào công cuộc phòng chống dịch bệnh COVID-19 của ngôi trường
-              THPT Chuyên Sư Phạm.
-            </p>
-          </div>
-          <div class="itemcol">
-            <img class="thumb" src="/productImage/astack.png" alt="" />
-            <h3 class="title">aSTACK</h3>
-            <p class="des">
-              Máy chơi trò Stack tự động được trưng bày trong một số sự kiện hội
-              chợ công nghệ của ADaPT.
-            </p>
-          </div>
-          <div class="itemcol">
-            <img class="thumb" src="/productImage/aide.webp" alt="" />
-            <h3 class="title">aIDE</h3>
-            <p class="des">
-              Hệ thống báo lũ aIDE là sản phẩm đạt giải nhất aSpeak 2020 với chủ
-              đề “thiên tai”.
-            </p>
-          </div>
-        </div>
-        <div class="itemrow">
-          <div class="itemcol">
-            <img class="thumb" src="/productImage/useless.png" alt="" />
-            <h3 class="title">USELESS MACHINE</h3>
-            <p class="des">
-              Chiếc máy này là một trong những trò chơi do ADaPT tạo ra và được
-              trưng bày trong triễn lãm với chủ đề “Cuộc thánh chiến giữa robot
-              và con người”.
-            </p>
-          </div>
-          <div class="itemcol">
-            <img class="thumb" src="/productImage/sudo.png" alt="" />
-            <h3 class="title">aSUDOKU</h3>
-            <p class="des">
-              Đây trò chơi mô phỏng trò sudoku nhưng với một phiên bản khác.
-              aSudoku là một trong những sản phẩm trong bộ sưu tập aGame của
-              ADaPT.
-            </p>
-          </div>
-          <div class="itemcol">
-            <img class="thumb" src="/productImage/pingpong.png" alt="" />
-            <h3 class="title">aPINGPONG</h3>
-            <p class="des">
-              Với mong mong muốn mô phỏng những tựa game huyền thoại nhưng làm
-              theo một phiên bản mới, aPingPong ra đời với nhiều tính năng và
-              cách chơi hoàn toàn khác so với tựa game Ping Pong truyền thống.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-      <div class="leftFooter">
-        <span>CONTACT US</span>
-      </div>
-      <div class="rightFooter">
-        <p class="footerLink">➤ FANPAGE: <a target="_blank" href="https://www.facebook.com/ADAPT.CSP" class="link">https://www.facebook.com/ADAPT.CSP</a></p>
-        <p class="footerLink">➤ INSTAGRAM: <a target="_blank" href="https://www.instagram.com/adaptzilla/" class="link">https://www.instagram.com/adaptzilla/</a></p>
-        <p class="footerLink">➤ EMAIL: <span class="email">club.adapt@gmail.com</span></p>
-        <p class="footerLink">➤ HOTLINE: <span class="tel">0387713635</span> (Nguyễn Minh Trang – Chủ tịch clb)</p>
+    <div class="flex flex-col content-center justify-center bg-white">
+      <h1
+        class="font-bold text-3xl text-red-600 uppercase text-center h-max m-2"
+        style="font-family: 'Roboto';"
+      >
+        Một số sản phẩm công nghệ của ADaPT
+      </h1>
+      <div class="grid grid-cols-3 justify-center content-center">
+        <Itemcard />
       </div>
     </div>
   </div>
-
-  <style>
-    .footer {
-      background-color: #282828;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      height: 15rem;
-    }
-
-    .footer .leftFooter {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: start;
-      width: 50%;
-      height: 70%;
-    }
-
-    .footer .leftFooter span {
-      font-weight: bold;
-      color: white;
-      font-size: 3rem;
-    }
-
-    .footer .rightFooter {
-      padding-left: 2rem;
-      width: 50%;
-      height: 70%;
-    }
-
-    .footer .rightFooter p{
-      font-weight: 700;
-      color: white;
-    }
-    
-    .footer .rightFooter p .link{
-      color: red;
-    }
-
-    .items {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .tel{
-      color: dodgerblue;
-    }
-
-    .itemrow {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      width: 99vw;
-      height: 50vh;
-    }
-
-    .itemcol {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      width: 30%;
-      height: 100%;
-      transition-duration: 100ms;
-      background-color: white;
-      padding: 10px;
-    }
-
-    .itemcol:hover {
-      background-color: #303030;
-      font-weight: bold;
-      /* box-shadow: black 0px 0px 10px 5px; */
-    }
-
-    .itemcol:hover > .des {
-      color: white;
-    }
-
-    .itemcol .thumb {
-      width: 50%;
-      height: auto;
-      border-radius: 1rem;
-    }
-
-    .itemcol .title {
-      color: red;
-    }
-
-    .itemcol .des {
-      font-family: "Courier New", Courier, monospace;
-      color: black;
-      text-align: center;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .prod-cont {
-      display: flex;
-      flex-direction: column;
-
-      padding-top: calc(var(--navHeight) + 2rem);
-    }
-
-    .firstSec {
-      overflow: hidden;
-      background-color: whitesmoke;
-      display: flex;
-      flex-direction: column;
-      justify-items: center;
-      align-items: center;
-      height: 50vh;
-      padding-top: 2vh;
-
-      animation: shrink;
-      animation-timeline: scroll();
-      animation-range: cover;
-    }
-
-    @keyframes shrink {
-      to {
-        opacity: 0.5;
-      }
-    }
-
-    .firstSec h1 {
-      width: 100%;
-      height: 5vh;
-      text-align: center;
-      color: black;
-    }
-
-    .content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: white;
-      box-shadow: white 0px 0px 10px 0px;
-      padding-bottom: 1rem;
-    }
-
-    .content h2 {
-      font-family:
-        Nunito Variable,
-        sans-serif;
-      width: 100%;
-      text-align: center;
-      font-size: 30px;
-      color: red;
-    }
-
-    .slide {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-
-      transition-duration: 100ms;
-    }
-
-    .slide button {
-      color: white;
-      background-color: rgba(211, 211, 211, 0.493);
-      border-radius: 0.5rem;
-      width: 5vw;
-      height: 5vw;
-      min-width: 50px;
-      min-height: 50px;
-      max-height: 70px;
-      max-width: 70px;
-      font-size: 30px;
-      position: absolute;
-      margin-top: auto;
-      margin-bottom: auto;
-      transition-duration: 100ms;
-    }
-
-    .slide button:hover {
-      background-color: white;
-      color: black;
-    }
-
-    .slide > .butleft {
-      left: 10px;
-    }
-
-    .slide > .butright {
-      right: 10px;
-    }
-
-    .slide-image {
-      object-fit: cover;
-      max-height: 40vh;
-      width: auto;
-      transition-duration: 100ms;
-    }
-
-    .slide-image:hover {
-      background-color: #e5e7eb;
-      box-shadow: #e5e7eb 0px 0px 3vh 3vh;
-    }
-
-    .poscont {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      width: fit-content;
-      height: 10px;
-      margin-top: 10px;
-      z-index: 1;
-    }
-  </style>
-
-  <script>
-    const img = document.getElementById("imgpre");
-    const srcList = ["bot.png", "circuit.jpg", "sudoku.jpg", "heart.png", "fogg.png"];
-    let curImg = 0;
-    img.src = "/productImage/" + srcList[curImg];
-
-    for (let i = 0; i < srcList.length; ++i) {
-      const pos = document.querySelector(".poscont");
-      const addpos = document.createElement("div");
-      addpos.id = `pos-${i}`;
-      addpos.style.borderColor = "black";
-      addpos.style.borderWidth = "2px";
-      addpos.style.borderRadius = "50%";
-      addpos.style.width = "10px";
-      addpos.style.height = "10px";
-      addpos.style.margin = "2px";
-      pos?.appendChild(addpos);
-    }
-
-    document.getElementById(`pos-${curImg}`).style.backgroundColor = "black";
-
-    let inv = setInterval(() => {
-      swit(1);
-    }, 5000);
-
-    document.querySelector(".butleft").onclick = prev;
-    document.querySelector(".butright").onclick = next;
-
-    function prev() {
-      swit(-1);
-      clearInterval(inv);
-    }
-
-    function next() {
-      swit(1);
-      clearInterval(inv);
-    }
-
-    function swit(amt) {
-      document.getElementById(`pos-${curImg}`).style.backgroundColor = "white";
-      curImg = (curImg + srcList.length + amt) % srcList.length;
-      document.getElementById(`pos-${curImg}`).style.backgroundColor = "black";
-      img.src = "/productImage/" + srcList[curImg];
-    }
-  </script>
 </Layout>
+
+<style>
+  .items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tel {
+    color: dodgerblue;
+  }
+
+  .itemcol:hover > .des {
+    color: white;
+  }
+
+  .prod-cont {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: calc(var(--navHeight) + 2rem);
+  }
+
+  .content {
+    box-shadow: white 0px 0px 10px 0px;
+    padding-bottom: 1rem;
+  }
+</style>
