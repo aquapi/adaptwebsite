@@ -77,19 +77,53 @@ const cardList: cardInfo[] = [
         theo một phiên bản mới, aPingPong ra đời với nhiều tính năng và cách
         chơi hoàn toàn khác so với tựa game Ping Pong truyền thống.`,
     },
+    {
+        imgsrc: "atrade.png",
+        tit: "aTRADE",
+        des: `
+        aTrade là thùng rác thông minh với khả năn nhận diện, phân loại rác thải
+        nhựa, bên cạnh đó chiếc máy này được tích hợp thêm máy tự động xát khuẩn
+        tay và máy đổi quà. Đây là sản phẩm đã xuất sắc lọt vào Top 12 cuộc thi FBI
+        – Future Blue Inovation.
+        `,
+    },
+    {
+        imgsrc: "heartsync.png",
+        tit: "HEARTSYNC",
+        des: `
+        Ứng dụng trò chuyện ẩn danh vô cùng nổi HeartSync được tạo ra và phát triển bởi ADaPT.
+        `,
+    },
+    {
+        imgsrc: "lightsaber.png",
+        tit: "KIẾM ÁNH SÁNG",
+        des: `
+        Sản phẩm được cho ra mắt và trưng bày tại hội chợ triển lãm công nghệ Lightsaber 2019.
+        `,
+    },
 ];
 ---
 
 {
     cardList.map((car) => (
-        <div class="duration-300 min-w-64 p-4 bg-white hover:bg-gray-900 group">
+        <div
+            class="duration-300 min-w-64 p-4 bg-white hover:bg-gray-900 group"
+            style="font-family: Roboto;"
+        >
             <img
                 class="thumb justify-self-center rounded"
                 src={"/productImage/" + car.imgsrc}
             />
             <article class="text-wrap align-middle text-center">
-                <h3 class="duration-100 text-red-600 text-xl group-hover:font-bold">{car.tit}</h3>
-                <p class="duration-100 text-lg ml-10 mr-10 text-justify text-black group-hover:text-white">{car.des}</p>
+                <h3 class="duration-100 text-red-600 text-xl group-hover:font-bold">
+                    {car.tit}
+                </h3>
+                <p
+                    class="duration-100 text-lg ml-10 mr-10 text-justify text-black group-hover:text-white"
+                    style="font-family: Roboto;"
+                >
+                    {car.des}
+                </p>
             </article>
         </div>
     ))
