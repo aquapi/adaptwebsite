@@ -1,0 +1,112 @@
+<div class="firstSec h-96 bg-slate-100">
+    <h1 class="text-lg font-bold text-black z-10">PRODUCTS</h1>
+    <div class="slide flex flex-row justify-center content-center relative w-full">
+        <button class="butleft text-3xl absolute text-white self-center bg-gray-600 rounded w-10 h-20 hover:bg-white hover:text-black duration-100"
+            ><i class="fa-solid fa-arrow-left"></i></button
+        >
+        <img class="object-fit h-96" src="" id="imgpre" />
+        <button class="butright text-3xl absolute text-white self-center bg-gray-600 rounded w-10 h-20 hover:bg-white hover:text-black duration-100"
+            ><i class="fa-solid fa-arrow-right"></i></button
+        >
+    </div>
+    <div id="poscont" class="flex flex-row justify-center content-center h-4 w-fit z-10 mt-4"></div>
+</div>
+
+<style>
+    .slide > .butleft {
+        left: 10px;
+    }
+
+    .slide > .butright {
+        right: 10px;
+    }
+    
+    .poscont {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        height: 10px;
+        margin-top: 10px;
+        z-index: 1;
+    }
+
+    .firstSec {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        padding-top: 2vh;
+
+        animation: shrink;
+        animation-timeline: scroll();
+        animation-range: cover;
+    }
+
+    @keyframes shrink {
+        to {
+            background-color: black;
+            opacity: 0.5;
+        }
+    }
+</style>
+
+<script>
+    const img = document.getElementById("imgpre");
+    const srcList = [
+        "bot.png",
+        "circuit.jpg",
+        "sudoku.jpg",
+        "heart.png",
+        "fogg.png",
+        "pp.png",
+        "thirdprize.jpg",
+        "uless.png",
+    ];
+    let curImg = 0;
+    img.src = "/productImage/" + srcList[curImg];
+
+    for (let i = 0; i < srcList.length; ++i) {
+        const pos = document.getElementById("poscont");
+        const addpos = document.createElement("div");
+        addpos.id = `pos-${i}`;
+        addpos.style.borderColor = "black";
+        addpos.style.borderWidth = "2px";
+        addpos.style.borderRadius = "50%";
+        addpos.style.width = "10px";
+        addpos.style.height = "10px";
+        addpos.style.margin = "2px";
+        pos?.appendChild(addpos);
+    }
+
+    document.getElementById(`pos-${curImg}`).style.backgroundColor = "black";
+
+    let inv = setInterval(() => {
+        swit(1);
+    }, 5000);
+
+    document.querySelector(".butleft").onclick = prev;
+    document.querySelector(".butright").onclick = next;
+
+    function prev() {
+        swit(-1);
+        clearInterval(inv);
+    }
+
+    function next() {
+        swit(1);
+        clearInterval(inv);
+    }
+
+    function swit(amt) {
+        document.getElementById(`pos-${curImg}`).style.backgroundColor =
+            "transparent";
+        curImg = (curImg + srcList.length + amt) % srcList.length;
+        document.getElementById(`pos-${curImg}`).style.backgroundColor =
+            "black";
+        img.src = "/productImage/" + srcList[curImg];
+    }
+</script>

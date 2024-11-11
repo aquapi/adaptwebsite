@@ -1,0 +1,96 @@
+---
+interface cardInfo {
+    imgsrc: string;
+    tit: string;
+    des: string;
+}
+
+const cardList: cardInfo[] = [
+    {
+        imgsrc: "classifyBin.png",
+        tit: "THÙNG RÁC TỰ PHÂN LOẠI RÁC",
+        des: `
+        Chiếc thùng rác tự phân loại rác thải được tích hợp công nghệ AI đã
+        giúp ích rất nhiều cho môi trường. Đây là sản phẩm đã đem về giải ba
+        Think Eco ngày hội STEME 2019.`,
+    },
+    {
+        imgsrc: "remotecar.png",
+        tit: "XE ĐIỀU KHIỂN TỪ XA",
+        des: `
+        Đây là chiếc xe được điều khiển bằng giọng nói. Hằng năm, các thế hệ
+        ADaPTer đều sẽ cho ra mắt một chiếc xe điều khiển từ xa mới được
+        phát triển dựa trên các xe điều khiển trước đó.`,
+    },
+    {
+        imgsrc: "rt.png",
+        tit: "RT",
+        des: `
+        Máy vớt rác trên sông RT là sản phẩm đạt giải nhất trong Talkshow
+        aSpeak 2019. Chiếc máy được làm từ các chai nhựa có hại cho môi
+        trường sau đó được tái chế và trở thành một sản phẩm có ích cho con
+        người.`,
+    },
+    {
+        imgsrc: "fog.png",
+        tit: "MÁY PHUN SƯƠNG KHỬ KHUẨN TỰ ĐỘNG",
+        des: `
+        Sản phẩm “Máy phun sương khử khuẩn tự động” đã góp một phần không
+        nhỏ vào công cuộc phòng chống dịch bệnh COVID-19 của ngôi trường
+        THPT Chuyên Sư Phạm.`,
+    },
+    {
+        imgsrc: "astack.png",
+        tit: "aSTACK",
+        des: `
+        Máy chơi trò Stack tự động được trưng bày trong một số sự kiện hội
+        chợ công nghệ của ADaPT.`,
+    },
+    {
+        imgsrc: "aide.webp",
+        tit: "aIDE",
+        des: `
+        Hệ thống báo lũ aIDE là sản phẩm đạt giải nhất aSpeak 2020 với chủ
+        đề “thiên tai”.`,
+    },
+    {
+        imgsrc: "useless.png",
+        tit: "USELESS MACHINE",
+        des: `
+        Chiếc máy này là một trong những trò chơi do ADaPT tạo ra và được
+        trưng bày trong triễn lãm với chủ đề “Cuộc thánh chiến giữa robot và
+        con người”.`,
+    },
+    {
+        imgsrc: "sudo.png",
+        tit: "aSUDOKU",
+        des: `
+        Đây trò chơi mô phỏng trò sudoku nhưng với một phiên bản khác.
+        aSudoku là một trong những sản phẩm trong bộ sưu tập aGame của
+        ADaPT.`,
+    },
+    {
+        imgsrc: "pingpong.png",
+        tit: "aPINGPONG",
+        des: `
+        Với mong muốn mô phỏng những tựa game huyền thoại nhưng làm
+        theo một phiên bản mới, aPingPong ra đời với nhiều tính năng và cách
+        chơi hoàn toàn khác so với tựa game Ping Pong truyền thống.`,
+    },
+];
+---
+
+{
+    cardList.map((car) => (
+        <div class="duration-300 min-w-64 p-4 bg-white hover:bg-gray-900 group">
+            <img
+                class="thumb justify-self-center rounded"
+                src={"/productImage/" + car.imgsrc}
+            />
+            <article class="text-wrap align-middle text-center">
+                <h3 class="duration-100 text-red-600 text-xl group-hover:font-bold">{car.tit}</h3>
+                <p class="duration-100 text-lg ml-10 mr-10 text-justify text-black group-hover:text-white">{car.des}</p>
+            </article>
+        </div>
+    ))
+}

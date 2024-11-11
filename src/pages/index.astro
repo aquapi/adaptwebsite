@@ -1,24 +1,12 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import HeroSection from '@/components/HeroSection.astro';
 ---
 
 <Layout
   title='ADaPT – Assemble Drive and Perform Technology'
   description='Xin chào tất cả mọi người, chúng mình đến từ câu lạc bộ công nghệ thông tin đầu tiên và duy nhất tại CSP - ADaPT! THE ONLY LIMIT IS YOUR IMAGINATION. ADaPT là câu lạc bộ công nghệ thông tin đầu tiên và duy nhất tại Chuyên Sư Phạm. Nhận thấy tầm…'
 >
-  <HeroSection>
-    {/** Make the text smaller on small screens */}
-    <h1 class='sm:text-7xl text-5xl text-zinc-50 pb-6'>ADaPT</h1>
-    {/** Make the text smaller on small screens */}
-    <p class='sm:text-2xl text-lg text-zinc-200 text-center max-w-2xl'>
-      Xin chào tất cả mọi người, chúng mình đến từ câu lạc bộ
-      công nghệ thông tin đầu tiên và duy nhất tại CSP – ADaPT!
-    </p>
-  </HeroSection>
-
-  <div class='hero min-h-[35vh] bg-[#FFD200]'>
-    {/** Make the text smaller on small screens */}
-    <p class='sm:text-5xl text-[2rem] p-5 max-w-xl text-center text-[#303030] !leading-normal font-bold'>THE ONLY LIMIT IS YOUR IMAGINATION</p>
-  </div>
+<script>
+  window.location.href += "home";
+</script>
 </Layout>
