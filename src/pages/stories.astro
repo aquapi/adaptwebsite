@@ -1,21 +1,14 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import StoriesSection from '@/components/StoriesSection.astro';
-import BannerSection from '@/components/BannerSection.astro';
+import StoryList from '@/components/StoryList.astro';
 ---
 
 <Layout
   title='Stories - ADaPT'
   description='GEN 1, 2 Nhận thấy tầm quan trọng của việc xây dựng niềm đam mê và yêu thích công nghệ trong các bạn trẻ, ADaPT ra đời với sứ mệnh đem đến một cái nhìn khác đối với một lĩnh vực được coi là vô cùng khô khan và khó tiếp cận. Được bảo trợ…'
 >
-  <h1 class="pt-16 text-4xl text-center">Stories</h1>
-  <div class="pt-16 flex gap-1 max-w-[1663px] ml-auto mr-auto items-center flex-col md:flex-row">
-    <img src="logo_truong.webp" alt="" class="img-row grow-[calc(557/506)]">
-    <img src="banner_adapt.webp" alt="" class="img-row grow-[calc(668/247)]">
-    <img src="logo_adapt.webp" alt="" class="img-row grow-[calc(506/506)]">
-  </div>
-  <StoriesSection></StoriesSection>
-  <BannerSection></BannerSection>
+  <h1 class="pt-16 sm:text-5xl text-3xl text-center text-zinc-50">Stories</h1>
+  <StoryList />
 </Layout>
 
 <style>
