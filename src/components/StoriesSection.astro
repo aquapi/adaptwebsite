@@ -1,0 +1,49 @@
+---
+import Story from "@/components/Story.astro";
+
+const stories = [
+  {
+    "imageURL": "gen12.png",
+    "header": "GEN 1, 2",
+    "content": "Nhận thấy tầm quan trọng của việc xây dựng niềm đam mê và yêu thích công nghệ trong các bạn trẻ, ADaPT ra đời với sứ mệnh đem đến một cái nhìn khác đối với một lĩnh vực được coi là vô cùng khô khan và khó tiếp cận. Được bảo trợ chuyên môn bởi thầy Đào Xuân Dương – giáo viên bộ môn Vật lý, tháng 3 năm 2016, thế hệ đầu tiên của ADaPT đã ra đời tại ngôi trường THPT Chuyên Sư Phạm. Với sự lãnh đạo của vị chủ tịch đầu tiên, chị Phạm Thanh Hương, ADaPT trong thời gian đầu thành lập đã tổ chức thành công aPresent 2016 và đã thu hút rất nhiều bạn học sinh quan tâm đến câu lạc bộ."
+  },
+  {
+    "imageURL": "gen3.png",
+    "header": "GEN 3",
+    "content": "Với sự lãnh đạo của vị chủ tịch kính mến – chị Đoàn Ngọc Ánh, ADaPT Gen 3 đã tổ chức thành công các sự kiện lớn, thu hút đông đảo các bạn học sinh tham gia: aPresent 2017, hội chợ công nghệ CyberPiece 2018."
+  },
+  {
+    "imageURL": "gen4.png",
+    "header": "GEN 4",
+    "content": "ADaPT Gen 4 dưới sự lãnh đạo của chị Nguyễn Ngọc Chi đã tổ chức thành công hai sự kiện lớn: aPresent 2018 và hội chợ công nghệ Lightsaber."
+  },
+  {
+    "imageURL": "gen5.png",
+    "header": "GEN 5",
+    "content": "Mặc dù bị ảnh hưởng do dịch bệnh nhưng dưới sự lãnh đạo của anh Nguyễn Ngọc Long, gen 5 là một gen khá thành công với ADaPT khi trở thành đại diện cho trường Chuyên Sư Phạm tham gia cuộc thi STEM do VinUni tổ chức với chủ đề bảo vệ môi trường và xuất sắc đem về 2 giải thưởng lớn. Một trong số 2 sản phẩm đó là chiếc thùng rác tự phân loại rác thải được tích hợp công nghệ AI đã giúp ích rất nhiều cho môi trường. Bên cạnh đó sản phẩm “Máy phun sương khử khuẩn tự động” đã góp một phần không nhỏ vào công cuộc phòng chống dịch bệnh COVID-19 của ngôi trường THPT Chuyên Sư Phạm."
+  },
+  {
+    "imageURL": "gen6.png",
+    "header": "GEN 6",
+    "content": "ADaPT Gen 6 đã tổ chức thành công aSpeak 2020 với sự chiến thắng của nhóm trạm cứu hộ nổi và báo lũ AIDE. Bên cạnh đó ADaPT đã vô cùng xuất sắc khi lọt vào Top 12 của cuộc thi Future Blue Innovation 2021 – FBI 2021 với sáng chế “Thùng rác thông minh – ATrade”."
+  },
+  {
+    "imageURL": "gen7.png",
+    "header": "GEN 7",
+    "content": "Trải qua 5 năm xây dựng và phát triển, câu lạc bộ đã dần khẳng định được vị thế của mình, tạo ra nhiều sản phẩm sáng tạo độc đáo được các bạn học sinh Chuyên Sư Phạm nói riêng và các bạn học sinh trên toàn thành phố Hà Nội nói chung hưởng ứng nhiệt liệt. Một gen mới lại bắt đầu, hãy cùng chờ đón xem dưới sự lãnh đạo của chủ tịch Nguyễn Khánh Linh, ADaPT gen 7 sẽ đem đến cho các bạn học sinh những trải nghiệm mới nào nhé!"
+  },
+  {
+    "imageURL": "gen8.webp",
+    "header": "GEN 8",
+    "content": "Sau 6 năm hoạt động, câu lạc bộ đã trải qua nhiều thử thách và càng khẳng định được vị thế của mình. Đồng hành với câu lạc bộ năm nay là những bé K56 vô cùng năng động dễ thương và đáng yêu cùng với Ban điều hành vô cùng mới mẻ. Hãy cùng chờ đón những trải nghiệm mới nhé!"
+  }
+];
+---
+
+{stories.map((story, id) => (
+  <Story
+    imageURL={story.imageURL}
+    header={story.header}
+    content={story.content}
+    reversed={id % 2 == 1}></Story>
+))}

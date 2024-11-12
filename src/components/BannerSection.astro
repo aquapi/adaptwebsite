@@ -1,0 +1,15 @@
+---
+const banners = [
+  "banner_1-2.webp",
+  "banner_3.png",
+  "banner_4.webp",
+  "banner_5.webp",
+  "banner_6.webp",
+  "banner_7.webp"
+];
+---
+<div>
+    {banners.map((url) => (
+      <img src={url} alt={url} class="w-full max-w-[1663px] ml-auto mr-auto pt-8 pl-6 pr-6">
+    ))}
+</div>
