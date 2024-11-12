@@ -1,0 +1,15 @@
+<div class='section w-screen min-h-[60vh] flex flex-col justify-center items-center bg-[#303030] [&:nth-child(odd)]:bg-[#242424] p-10'>
+  <slot />
+</div>
+
+<style is:global>
+  div.section {
+    & > p.title {
+      @apply sm:text-5xl text-3xl text-[#FFD200] font-semibold my-10
+    }
+
+    & > p.content {
+      @apply sm:text-2xl text-xl text-zinc-50 sm:text-justify max-w-[50rem]
+    }
+  }
+</style>
