@@ -28,9 +28,7 @@ for (let i = 0; i < srcList.length; ++i) {
 <div
     class="firstSec h-full bg-slate-100 relative flex flex-col justify-center content-center p-10"
 >
-    <h1 class="text-lg font-bold text-black w-full text-center">
-        PRODUCTS
-    </h1>
+    <h1 class="text-lg font-bold text-black w-full text-center">PRODUCTS</h1>
     <div class="slide flex flex-row justify-center content-center">
         <button
             class="butleft text-3xl absolute text-white self-center bg-gray-600 rounded w-10 h-20 hover:bg-white hover:text-black duration-100"
@@ -67,7 +65,7 @@ for (let i = 0; i < srcList.length; ++i) {
     .slide > .butright {
         right: 10px;
     }
-    
+
     .firstSec {
         overflow: hidden;
         display: flex;
@@ -91,30 +89,34 @@ for (let i = 0; i < srcList.length; ++i) {
 </style>
 
 <script>
-    location.hash = "";
-
     let curImg = 0;
     const imgNum = 8;
 
-    // let inv = setInterval(() => {
-    //     swit(1);
-    // }, 5000);
+    let offSetLeft = [];
+    for (let i = 0; i < imgNum; ++i)
+        offSetLeft.push(document.getElementById(`img-${i}`).offsetLeft);
+    console.log(offSetLeft);
 
-    document.querySelector(".butleft").onclick = prev;
-    document.querySelector(".butright").onclick = next;
+    document.querySelector(".butleft").addEventListener("click", prev);
+    document.querySelector(".butright").addEventListener("click", next);
+
+    let inv = setInterval(() => {
+        swit(1);
+    }, 3000);
 
     function prev() {
         swit(-1);
-        // clearInterval(inv);
+        clearInterval(inv);
     }
 
     function next() {
         swit(1);
-        // clearInterval(inv);
+        clearInterval(inv);
     }
 
+    const imageContainer = document.getElementById("carousel");
     function swit(amt: number) {
         curImg = (curImg + imgNum + amt) % imgNum;
-        location.hash = `#img-${curImg}`;
+        imageContainer.scrollLeft = offSetLeft[curImg];
     }
 </script>
