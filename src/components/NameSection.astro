@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets';
+
+import aHeroBanner from '@/assets/images/banner2.webp';
+---
+
+<div class='card md:card-side rounded-3xl bg-[#FEF6E6] w-screen max-w-[56rem]'>
+  <figure>
+    <Image src={aHeroBanner} alt="aHero banner" />
+  </figure>
+  <div class="card-body text-black text-2xl justify-between text-left">
+    <p><b>A</b> – Assemble: tập hợp những con người yêu thích trí tuệ</p>
+    <p><b>D</b> – Drive: đam mê làm chủ công nghệ</p>
+    <p><b>A</b> – And</p>
+    <p><b>P</b> – Performance: khả năng thuyết trình trước đám đông, dám nghĩ dám làm, dám thể hiện</p>
+    <p><b>T</b> – Technology: đưa công nghệ đến gần hơn với các bạn trẻ</p>
+
+    <style>
+      p {
+        @apply grow-0;
+      }
+    </style>
+  </div>
+</div>
