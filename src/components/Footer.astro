@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import logo from "@/assets/images/logo.webp";
+---
+
+{
+  <footer class="footer bg-neutral text-neutral-content p-3 md:p-10 text-xl text-wrap">
+    <nav class="ml-auto mr-auto">
+      <div class="flex flex-row-reverse gap-3">
+        <h1 class="text-4xl">Let's connect!</h1>
+        <Image src={logo} alt="ADaPT" width={50}></Image>
+      </div>
+    </nav>
+    <nav>
+      <p>➤ FANPAGE: 
+        <a class="link link-hover text-red-500" href="https://www.facebook.com/ADAPT.CSP">https://www.facebook.com/ADAPT.CSP</a>
+      </p>
+      <p>➤ INSTAGRAM: 
+        <a class="link link-hover text-red-500" href="https://www.instagram.com/adaptzilla/">https://www.instagram.com/adaptzilla/</a>
+      </p>
+      <p>➤ EMAIL: 
+        <a class="link link-hover" href="mailto:club.adapt@gmail.com">club.adapt@gmail.com</a>
+      </p>
+      <p>➤ HOTLINE: 
+        <a class="link link-hover" href="tel:0823255926">0823255926 (Lưu Hà Khánh Ngọc - Trưởng ban Truyền thông)</a>
+      </p>
+    </nav>
+  </footer>
+}

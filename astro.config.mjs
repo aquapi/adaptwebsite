@@ -9,4 +9,7 @@ export default defineConfig({
   prefetch: {
     prefetchAll: true,
   },
+  redirects: {
+    "/home": "/"
+  }
 });
