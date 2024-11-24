@@ -89,16 +89,17 @@ for (let i = 0; i < srcList.length; ++i) {
 </style>
 
 <script>
-    let curImg = 0;
+    let currentImg = 0;
     const imgNum = 8;
 
-    let offSetLeft = [];
-    for (let i = 0; i < imgNum; ++i)
-        offSetLeft.push(document.getElementById(`img-${i}`).offsetLeft);
+    let offSetLeft : Number[] = [];
+    for (let i = 0; i < imgNum; i++){
+        offSetLeft.push(document.getElementById(`img-${i}`)!.offsetLeft);
+    }
     console.log(offSetLeft);
 
-    document.querySelector(".butleft").addEventListener("click", prev);
-    document.querySelector(".butright").addEventListener("click", next);
+    document.querySelector(".butleft")?.addEventListener("click", prev);
+    document.querySelector(".butright")?.addEventListener("click", next);
 
     let inv = setInterval(() => {
         swit(1);
@@ -116,7 +117,7 @@ for (let i = 0; i < srcList.length; ++i) {
 
     const imageContainer = document.getElementById("carousel");
     function swit(amt: number) {
-        curImg = (curImg + imgNum + amt) % imgNum;
-        imageContainer.scrollLeft = offSetLeft[curImg];
+        currentImg = (currentImg + imgNum + amt) % imgNum;
+        imageContainer!.scrollLeft = offSetLeft[currentImg] as number;
     }
 </script>

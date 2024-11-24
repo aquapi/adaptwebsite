@@ -9,4 +9,5 @@ export default defineConfig({
   prefetch: {
     prefetchAll: true,
   },
+  site: 'https://aDaPT.dangheo.com',
 });

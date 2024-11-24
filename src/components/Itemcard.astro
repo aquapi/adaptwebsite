@@ -1,86 +1,86 @@
 ---
 interface cardInfo {
-    imgsrc: string;
-    tit: string;
-    des: string;
+    imageSource: string;
+    imageTitle: string;
+    imageDescription: string;
 }
 
 const cardList: cardInfo[] = [
     {
-        imgsrc: "classifyBin.png",
-        tit: "THÙNG RÁC TỰ PHÂN LOẠI RÁC",
-        des: `
+        imageSource: "classifyBin.png",
+        imageTitle: "THÙNG RÁC TỰ PHÂN LOẠI RÁC",
+        imageDescription: `
         Chiếc thùng rác tự phân loại rác thải được tích hợp công nghệ AI đã
         giúp ích rất nhiều cho môi trường. Đây là sản phẩm đã đem về giải ba
         Think Eco ngày hội STEME 2019.`,
     },
     {
-        imgsrc: "remotecar.png",
-        tit: "XE ĐIỀU KHIỂN TỪ XA",
-        des: `
+        imageSource: "remotecar.png",
+        imageTitle: "XE ĐIỀU KHIỂN TỪ XA",
+        imageDescription: `
         Đây là chiếc xe được điều khiển bằng giọng nói. Hằng năm, các thế hệ
         ADaPTer đều sẽ cho ra mắt một chiếc xe điều khiển từ xa mới được
         phát triển dựa trên các xe điều khiển trước đó.`,
     },
     {
-        imgsrc: "rt.png",
-        tit: "RT",
-        des: `
+        imageSource: "rt.png",
+        imageTitle: "RT",
+        imageDescription: `
         Máy vớt rác trên sông RT là sản phẩm đạt giải nhất trong Talkshow
         aSpeak 2019. Chiếc máy được làm từ các chai nhựa có hại cho môi
         trường sau đó được tái chế và trở thành một sản phẩm có ích cho con
         người.`,
     },
     {
-        imgsrc: "fog.png",
-        tit: "MÁY PHUN SƯƠNG KHỬ KHUẨN TỰ ĐỘNG",
-        des: `
+        imageSource: "fog.png",
+        imageTitle: "MÁY PHUN SƯƠNG KHỬ KHUẨN TỰ ĐỘNG",
+        imageDescription: `
         Sản phẩm “Máy phun sương khử khuẩn tự động” đã góp một phần không
         nhỏ vào công cuộc phòng chống dịch bệnh COVID-19 của ngôi trường
         THPT Chuyên Sư Phạm.`,
     },
     {
-        imgsrc: "astack.png",
-        tit: "aSTACK",
-        des: `
+        imageSource: "astack.png",
+        imageTitle: "aSTACK",
+        imageDescription: `
         Máy chơi trò Stack tự động được trưng bày trong một số sự kiện hội
         chợ công nghệ của ADaPT.`,
     },
     {
-        imgsrc: "aide.webp",
-        tit: "aIDE",
-        des: `
+        imageSource: "aide.webp",
+        imageTitle: "aIDE",
+        imageDescription: `
         Hệ thống báo lũ aIDE là sản phẩm đạt giải nhất aSpeak 2020 với chủ
         đề “thiên tai”.`,
     },
     {
-        imgsrc: "useless.png",
-        tit: "USELESS MACHINE",
-        des: `
+        imageSource: "useless.png",
+        imageTitle: "USELESS MACHINE",
+        imageDescription: `
         Chiếc máy này là một trong những trò chơi do ADaPT tạo ra và được
         trưng bày trong triễn lãm với chủ đề “Cuộc thánh chiến giữa robot và
         con người”.`,
     },
     {
-        imgsrc: "sudo.png",
-        tit: "aSUDOKU",
-        des: `
+        imageSource: "sudo.png",
+        imageTitle: "aSUDOKU",
+        imageDescription: `
         Đây trò chơi mô phỏng trò sudoku nhưng với một phiên bản khác.
         aSudoku là một trong những sản phẩm trong bộ sưu tập aGame của
         ADaPT.`,
     },
     {
-        imgsrc: "pingpong.png",
-        tit: "aPINGPONG",
-        des: `
+        imageSource: "pingpong.png",
+        imageTitle: "aPINGPONG",
+        imageDescription: `
         Với mong muốn mô phỏng những tựa game huyền thoại nhưng làm
         theo một phiên bản mới, aPingPong ra đời với nhiều tính năng và cách
         chơi hoàn toàn khác so với tựa game Ping Pong truyền thống.`,
     },
     {
-        imgsrc: "atrade.png",
-        tit: "aTRADE",
-        des: `
+        imageSource: "atrade.png",
+        imageTitle: "aTRADE",
+        imageDescription: `
         aTrade là thùng rác thông minh với khả năn nhận diện, phân loại rác thải
         nhựa, bên cạnh đó chiếc máy này được tích hợp thêm máy tự động xát khuẩn
         tay và máy đổi quà. Đây là sản phẩm đã xuất sắc lọt vào Top 12 cuộc thi FBI
@@ -88,16 +88,16 @@ const cardList: cardInfo[] = [
         `,
     },
     {
-        imgsrc: "heartsync.png",
-        tit: "HEARTSYNC",
-        des: `
+        imageSource: "heartsync.png",
+        imageTitle: "HEARTSYNC",
+        imageDescription: `
         Ứng dụng trò chuyện ẩn danh vô cùng nổi HeartSync được tạo ra và phát triển bởi ADaPT.
         `,
     },
     {
-        imgsrc: "lightsaber.png",
-        tit: "KIẾM ÁNH SÁNG",
-        des: `
+        imageSource: "lightsaber.png",
+        imageTitle: "KIẾM ÁNH SÁNG",
+        imageDescription: `
         Sản phẩm được cho ra mắt và trưng bày tại hội chợ triển lãm công nghệ Lightsaber 2019.
         `,
     },
@@ -112,17 +112,17 @@ const cardList: cardInfo[] = [
         >
             <img
                 class="thumb justify-self-center rounded"
-                src={"/productImage/" + car.imgsrc}
+                src={"/productImage/" + car.imageSource}
             />
             <article class="text-wrap align-middle text-center">
                 <h3 class="duration-100 text-red-600 text-xl group-hover:font-bold">
-                    {car.tit}
+                    {car.imageTitle}
                 </h3>
                 <p
                     class="duration-100 text-lg ml-10 mr-10 text-justify group-hover:text-black text-white"
                     style="font-family: Roboto;"
                 >
-                    {car.des}
+                    {car.imageDescription}
                 </p>
             </article>
         </div>
