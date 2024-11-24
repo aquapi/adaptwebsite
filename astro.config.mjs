@@ -3,11 +3,15 @@ import { defineConfig } from "astro/config";
 
 import tailwind from "@astrojs/tailwind";
 
-// https://astro.build/config
+import netlify from "@astrojs/netlify";
+
 export default defineConfig({
   integrations: [tailwind()],
+
   prefetch: {
     prefetchAll: true,
   },
-  site: 'https://aDaPT.dangheo.com',
+
+  output: "server",
+  adapter: netlify(),
 });
