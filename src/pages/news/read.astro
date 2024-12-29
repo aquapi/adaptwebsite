@@ -1,0 +1,19 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ReadPost from '@/components/posts/Read.tsx';
+---
+
+<Layout
+  title='News - ADaPT'
+  description='ADaPT news'
+>
+  <div class='w-screen min-h-screen flex justify-center bg-[#282828]'>
+    <ReadPost client:load />
+  </div>
+</Layout>
+
+<style is:global>
+  main p {
+    @apply mb-4
+  }
+</style>
