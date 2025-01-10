@@ -1,4 +1,5 @@
 import { createSignal, onMount, Show } from "solid-js";
+import { decodeTitle } from "./List";
 
 interface Post {
   title: string;
@@ -20,11 +21,18 @@ export async function getPost(id: string): Promise<Post | null> {
   }
 }
 
-export const decodeContent = (str: string) =>
-  new DOMParser().parseFromString(str, "text/html").documentElement.innerHTML;
+export const decodeContent = (str: string) => {
+  const el = new DOMParser().parseFromString(str, "text/html").body;
+  const childWithoutFirstCount = el.children.length - 1;
 
-export const decodeTitle = (str: string) =>
-  str.replace(/&#(\d+);/g, (_, e) => String.fromCharCode(e));
+  if (childWithoutFirstCount > 0) {
+    const last = el.children.item(childWithoutFirstCount);
+    // Remove the Let's Connect
+    if (last !== null) el.removeChild(last);
+  }
+
+  return el.innerHTML;
+};
 
 const Post = (props: Post) => (
   <div class="sm:p-24 p-16 bg-[#F8F8F8] max-w-4xl">

@@ -1,5 +1,4 @@
 import { createSignal, onMount, Show } from "solid-js";
-import { decodeTitle } from "./Read";
 
 interface Post {
   title: string;
@@ -17,6 +16,25 @@ export async function getPosts(): Promise<Post[] | null> {
     return null;
   }
 }
+
+// Can people write better titles?
+const normalizePostTitle = (str: string) =>
+  str
+    .split(" ")
+    .map((word) =>
+      (word === word.toUpperCase() && word !== "PTC"
+        ? word[0].toUpperCase() + word.slice(1).toLowerCase()
+        : word
+      )
+        .replace(/A[dD][aA][pP][tT]/g, "ADaPT")
+        .replace(/(.)-(.)/g, (_, a, b) => a + " - " + b.toUpperCase())
+    )
+    .join(" ");
+
+export const decodeTitle = (str: string) =>
+  normalizePostTitle(
+    str.replace(/&#(\d+);/g, (_, e) => String.fromCharCode(e))
+  );
 
 const Post = (post: Post) => (
   <a href={`/news/read?id=${post.ID}`} class="underline decoration-dashed">
