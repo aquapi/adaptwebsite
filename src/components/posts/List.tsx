@@ -37,12 +37,14 @@ export const decodeTitle = (str: string) =>
   );
 
 const Post = (post: Post) => (
-  <a
-    href={`/news/read?id=${post.id}`}
-    class="underline decoration-dashed sm:text-2xl text-xl"
-  >
-    {decodeTitle(post.title)}
-  </a>
+  <li>
+    <a
+      href={`/news/read?id=${post.id}`}
+      class="underline decoration-dashed sm:text-2xl text-xl"
+    >
+      {decodeTitle(post.title)}
+    </a>
+  </li>
 );
 
 export default () => {
@@ -54,7 +56,7 @@ export default () => {
 
   return (
     <Show when={posts() !== null} fallback={<div>Loading...</div>}>
-      {posts()?.map(Post)}
+      <ul>{posts()?.map(Post)}</ul>
     </Show>
   );
 };
