@@ -37,7 +37,10 @@ export const decodeTitle = (str: string) =>
   );
 
 const Post = (post: Post) => (
-  <a href={`/news/read?id=${post.id}`} class="underline decoration-dashed">
+  <a
+    href={`/news/read?id=${post.id}`}
+    class="underline decoration-dashed sm:text-2xl text-xl"
+  >
     {decodeTitle(post.title)}
   </a>
 );
