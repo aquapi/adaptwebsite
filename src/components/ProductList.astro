@@ -1,0 +1,142 @@
+---
+import { Image } from 'astro:assets';
+
+import img1 from "@/assets/images/products/1.png";
+import img2 from "@/assets/images/products/2.png";
+import img3 from "@/assets/images/products/3.png";
+import img4 from "@/assets/images/products/4.png";
+import img5 from "@/assets/images/products/5.png";
+import img6 from "@/assets/images/products/6.webp";
+import img7 from "@/assets/images/products/7.png";
+import img8 from "@/assets/images/products/8.png";
+import img9 from "@/assets/images/products/9.png";
+import img10 from "@/assets/images/products/10.png";
+import img11 from "@/assets/images/products/11.png";
+import img12 from "@/assets/images/products/12.png";
+
+const products = [
+    {
+        image: img1,
+        heading: "THÙNG RÁC TỰ PHÂN LOẠI RÁC",
+        description: "Chiếc thùng rác tự phân loại rác thải được tích hợp công nghệ AI đã giúp ích rất nhiều cho môi trường. Đây là sản phẩm đã đem về giải ba Think Eco ngày hội STEME 2019."
+    },
+    {
+        image: img2,
+        heading: "XE ĐIỀU KHIỂN TỪ XA",
+        description: "Đây là chiếc xe được điều khiển bằng giọng nói. Hằng năm, các thế hệ ADaPTer đều sẽ cho ra mắt một chiếc xe điều khiển từ xa mới được phát triển giựa trên các xe điều khiển trước đó."
+    },
+    {
+        image: img3,
+        heading: "RT",
+        description: "Máy vớt rác trên sông RT là sản phẩm đạt giải nhất trong Talkshow aSpeak 2019. Chiếc máy được làm từ các chai nhựa có hại cho môi trường sau đó được tái chế và trở thành một sản phẩm có ích cho con người."
+    },
+    {
+        image: img4,
+        heading: "MÁY PHUN SƯƠNG KHỬ KHUẨN TỰ ĐỘNG",
+        description: "Sản phẩm “Máy phun sương khử khuẩn tự động” đã góp một phần không nhỏ vào công cuộc phòng chống dịch bệnh COVID-19 của ngôi trường THPT Chuyên Sư Phạm."
+    },
+    {
+        image: img5,
+        heading: "aSTACK",
+        description: "Máy chơi trò Stack tự động được trưng bày trong một số sự kiện hội chợ công nghệ của ADaPT."
+    },
+    {
+        image: img6,
+        heading: "aIDE",
+        description: "Hệ thống báo lũ aIDE là sản phẩm đạt giải nhất aSpeak 2020 với chủ đề “thiên tai”."
+    },
+    {
+        image: img7,
+        heading: "USELESS MACHINE",
+        description: "Chiếc máy này là một trong những trò chơi do ADaPT tạo ra và được trưng bày trong triễn lãm với chủ đề “Cuộc thánh chiến giữa robot và con người”.",
+    },
+    {
+        image: img8,
+        heading: "aSUDOKU",
+        description: "Đây trò chơi mô phỏng trò sudoku nhưng với một phiên bản khác. aSudoku là một trong những sản phẩm trong bộ sưu tập aGame của ADaPT."
+    },
+    {
+        image: img9,
+        heading: "aPINGPONG",
+        description: "Với mong mong muốn mô phỏng những tựa game huyền thoại nhưng làm theo một phiên bản mới, aPingPong ra đời với nhiều tính năng và cách chơi hoàn toàn khác so với tựa game Ping Pong truyền thống."
+    },
+    {
+        image: img10,
+        heading: "aTRADE",
+        description: "aTrade là thùng rác thông minh với khả năn nhận diện, phân loại rác thải nhựa, bên cạnh đó chiếc máy này được tích hợp thêm máy tự động xát khuẩn tay và máy đổi quà. Đây là sản phẩm đã xuất sắc lọt vào Top 12 cuộc thi FBI – Future Blue Inovation."
+    },
+    {
+        image: img11,
+        heading: "HEARTSYNC",
+        description: "Ứng dụng trò chuyện ẩn danh vô cùng nổi HeartSync được tạo ra và phát triển bởi ADaPT."
+    },
+    {
+        image: img12,
+        heading: "KIẾM ÁNH SÁNG",
+        description: "Sản phẩm được cho ra mắt và trưng bày tại hội chợ triển lãm công nghệ Lightsaber 2019."
+    }
+];
+
+---
+<>
+<div class="carousel w-full pt-12">
+    {products.map((product, i) => <>
+        <div id={`slide${i}`} class="carousel-item relative w-full flex flex-col">
+            <a href={`#product${i}`} class="ml-auto mr-auto">
+                <Image src={product.image} alt={product.heading} class="w-50% h-auto rounded-3xl" />
+            </a>
+            <h3 class="ml-auto mr-auto pt-2">{product.heading}</p>
+            <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                <a href={`#slide${((i - 1) % products.length + products.length) % products.length}`} class="btn btn-circle changeimgl">❮</a>
+                <a href={`#slide${((i + 1) % products.length + products.length) % products.length}`} class="btn btn-circle changeimgr">❯</a>
+            </div>
+        </div>
+    </>)}
+</div>
+
+<div class="flex flex-wrap justify-center pt-12">
+    {products.map((product, i) =>
+        <div id={`product${i}`} class="w-[400px] pl-2 pr-2">
+            <div class='mb-auto mt-auto'>
+                <Image src={product.image} alt={product.heading} class="w-full h-auto rounded-3xl" />
+            </div>
+            <div class="text-center mt-auto mb-auto p-10">
+                <h1 class="text-red-700 text-[40px] font-normal">{product.heading}</h1>
+                <p class="text-white pt-4 pl-4 pr-4 text-[20px]">{product.description}</p>
+            </div>
+        </div>
+    )}
+</div>
+
+<script>
+    let curimg = 0;
+
+    const goTo = (event: any) => {
+        event.preventDefault()
+        const btn = event.currentTarget;
+
+        const carousel = document.querySelector(".carousel");
+
+        const href = btn?.getAttribute('href');
+        const target = carousel?.querySelector(href);
+        const left = target.offsetLeft;
+        carousel?.scrollTo({ left: left });
+        curimg = href.substring(6);
+        console.log(curimg);
+    }
+
+    const buttonsLeft = document.querySelectorAll(".changeimgl");
+    const buttonsRight : NodeListOf<HTMLButtonElement> = document.querySelectorAll(".changeimgr");
+
+    buttonsLeft.forEach((btn) => {
+        btn.addEventListener("click", goTo);
+    });
+    buttonsRight.forEach((btn) => {
+        btn.addEventListener("click", goTo);
+    });
+    
+    setInterval(() => {
+        buttonsRight[curimg]?.click();
+    }, 5000);
+</script>
+</>
