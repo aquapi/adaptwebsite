@@ -8,7 +8,7 @@ interface Post {
 export async function getPosts(): Promise<Post[] | null> {
   try {
     const dat = await fetch(
-      "https://adapt-wordpress-cache.aquapi.workers.dev/listing"
+      "https://adapt-wordpress-cache.aquapi.workers.dev/posts"
     );
     return dat.json() as Promise<Post[]>;
   } catch (e) {
@@ -22,8 +22,8 @@ const normalizePostTitle = (str: string) =>
   str
     .split(" ")
     .map((word) =>
-      (word === word.toUpperCase() && word !== "PTC"
-        ? word[0].toUpperCase() + word.slice(1).toLowerCase()
+      (word === word.toUpperCase() && word !== "PTC" && word !== ""
+        ? word[0]!.toUpperCase() + word.slice(1).toLowerCase()
         : word
       )
         .replace(/A[dD][aA][pP][tT]/g, "ADaPT")

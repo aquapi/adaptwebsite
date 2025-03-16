@@ -12,8 +12,7 @@ interface Post {
 export async function getPost(id: string): Promise<Post | null> {
   try {
     const dat = await fetch(
-      "https://public-api.wordpress.com/rest/v1.1/sites/clubadapt.wordpress.com/posts/" +
-        id
+      "https://adapt-wordpress-cache.aquapi.workers.dev/posts/" + id
     );
     return dat.json() as Promise<Post>;
   } catch {
@@ -35,13 +34,13 @@ export const decodeContent = (str: string) => {
 };
 
 const Post = (props: Post) => (
-  <div class="sm:p-24 p-16 bg-[#F8F8F8] max-w-4xl">
-    <h1 class="sm:text-4xl text-2xl text-[#303030] font-base font-extrabold">
+  <div class="sm:p-24 p-16 max-w-4xl">
+    <h1 class="sm:text-4xl text-2xl text-[#F8F8F8] font-base font-extrabold">
       {decodeTitle(props.title)}
     </h1>
-    <p class="text-[#777b84]">{props.author.name}</p>
+    <p class="text-[#e5e5e5]">{props.author.name}</p>
     <main
-      class="mt-10 text-lg text-justify text-[#454545] max-w-3xl"
+      class="mt-10 text-lg text-justify text-[#F8F8F8] max-w-3xl"
       innerHTML={decodeContent(props.content)}
     ></main>
   </div>

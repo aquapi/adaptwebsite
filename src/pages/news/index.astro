@@ -1,0 +1,16 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import List from '@/components/posts/List.tsx';
+---
+
+<Layout
+  title='News - ADaPT'
+  description='ADaPT news'
+>
+  <main class='bg-[#282828] py-16 w-screen flex flex-col items-center'>
+    <h1 class='sm:text-5xl text-3xl text-center text-[#FAFAFA]'>News</h1>
+    <div class='mt-10 text-[#e5e5e5] flex flex-col pl-6 gap-4 min-h-screen text-xl'>
+      <List client:load />
+    </div>
+  </main>
+</Layout>
