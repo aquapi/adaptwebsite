@@ -1,5 +1,5 @@
 import { createSignal, onMount, Show } from "solid-js";
-import { decodeTitle } from "./List";
+import { decodeTitle } from "./list";
 
 interface Post {
   title: string;
@@ -22,10 +22,9 @@ export async function getPost(id: string): Promise<Post | null> {
 
 export const decodeContent = (str: string) => {
   const el = new DOMParser().parseFromString(str, "text/html").body;
-  const childWithoutFirstCount = el.children.length - 1;
 
-  if (childWithoutFirstCount > 0) {
-    const last = el.children.item(childWithoutFirstCount);
+  if (el.children.length > 1) {
+    const last = el.children.item(el.children.length - 1);
     // Remove the Let's Connect
     if (last !== null) el.removeChild(last);
   }
