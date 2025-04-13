@@ -1,10 +1,13 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import Resources from '@/components/resources';
 ---
 
 <Layout
     title='Resources - ADaPT'
     description='ADaPT Engineering resources'
 >
-  <h1 class='sm:text-7xl text-5xl text-zinc-50 pb-6'>Resources</h1>
+  <div class='w-screen min-h-screen flex justify-center bg-[#282828]'>
+    <Resources client:load />
+  </div>
 </Layout>

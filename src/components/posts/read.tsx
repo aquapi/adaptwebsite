@@ -41,7 +41,7 @@ const Post = (props: Post) => (
     <main
       class="mt-10 text-lg text-justify text-[#F8F8F8] max-w-3xl"
       innerHTML={decodeContent(props.content)}
-    ></main>
+    />
   </div>
 );
 
