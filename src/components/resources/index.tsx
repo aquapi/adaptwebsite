@@ -74,27 +74,17 @@ export default function DocumentList() {
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {filteredDocuments().map((doc) => (
           <div class="border p-4 rounded-lg shadow-sm flex items-start space-x-4 bg-white hover:cursor-pointer hover:shadow-md transition">
-            <div class="text-2xl font-semibold select-none mt-auto mb-auto bg-gray-200 w-8 h-8 text-center">
+            <div class="text-2xl font-semibold select-none mt-auto mb-auto w-8 h-8 text-center">
               🗎
             </div>
             <div class="flex-1">
               <div class="font-semibold cursor-text text-gray-700">
                 {doc.name}
               </div>
-              {selectedCategory() === "All" ? (
-                <div class="text-sm text-gray-500 select-none">
-                  {doc.category}
-                </div>
-              ) : (
-                ""
-              )}
+              <div class="text-sm text-gray-500 select-none">
+                {doc.category}
+              </div>
             </div>
-            <button
-              type="button"
-              class="select-none font-semibold hover:text-black hover:cursor-pointer mt-auto mb-auto"
-            >
-              🗎
-            </button>
           </div>
         ))}
       </div>
